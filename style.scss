@@ -1,0 +1,381 @@
+$mainblue: #28536B;  
+$secondblue: #7EA8BE;
+$light: #F6F0ED;
+$beige: #BBB193;
+
+@mixin transform ($val){
+	-webkit-transform: ($val);
+	-ms-transform: ($val);
+	transform: ($val);
+}
+
+body {
+	padding-bottom: 100px;
+	background-color: $light;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+	padding-left: 0;
+}
+
+/***********************************************
+        NAVBAR STYLING
+***********************************************/        
+.navbar-default {
+    background-color: rgba(40, 83, 107, 0);
+    border-color: transparent;
+    background-image: none;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s ease 0s;
+}
+
+.navbar-default.opaque {
+	background-color: rgba(40, 83, 107, 1.0);
+	border-color: $secondblue;
+	background-image: none;
+	background-repeat: no-repeat;
+	transition: background-color 0.3s ease 0s;
+}
+
+.navbar-default .navbar-brand {
+	font-family: 'Sigmar One', sans-sarif;
+	font-size: 30px;
+	color: $secondblue;
+	&:hover,
+	&:focus {
+		color: $light;
+		background-color: transparent;
+	}
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: $secondblue;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+    color: $mainblue;
+    background-color: $light;
+    outline: none;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus, {
+	background-color: $light;
+	color: $mainblue;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: $beige;
+	color: $beige;
+	.icon-bar {
+		background-color: $beige;
+	}
+	&:hover {
+		background-color: $secondblue;
+	}
+	&:focus {
+		background-color: $secondblue;
+	}
+	.dropdown-toggle a {
+		color: $mainblue;
+	}
+}
+
+.nav .dropdown .dropdown-menu {
+	background-color: $secondblue;
+	li,
+	li a {
+		color: $mainblue
+	}
+	li a:hover {
+		background-color: $mainblue;
+		color: $secondblue;
+	}
+}
+
+/***********************************************
+        JUMBOTRON STYLING
+***********************************************/ 
+
+.jumbotron {
+	background: url(images/fractal2.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 100vh;
+	h1, p {
+		color: $light;
+	}
+}
+
+.fly-in-text {
+	list-style: none;
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.fly-in-text li {
+	display: inline-block;
+	margin-right: 50px;
+	font-weight: 300;
+	font-size: 4em;
+	color: $light;
+	opacity: 1;
+	transition: all 3s ease;
+}
+
+.fly-in-text li:last-child {
+	margin-right: 0;
+}
+
+.fly-in-text li:nth-child(3) {
+	color: $secondblue;
+}
+
+// .fly-in-text .gone li {
+// 	opacity: 0;
+// }
+
+.bobby {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+  	-webkit-animation-delay: 0s;
+  	animation-delay: 0s;
+  	font-family: 'Bangers', cursive;
+}
+
+.webd {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+  	-webkit-animation-delay: 1s;
+  	animation-delay: 1s;
+  	font-family: 'Righteous', cursive;
+}
+
+.and {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+  	-webkit-animation-delay: 2s;
+  	animation-delay: 2s;
+	font-family: 'Leckerli One', cursive;	
+	color: $secondblue;
+}
+
+.consult {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+  	-webkit-animation-delay: 3s;
+  	animation-delay: 3s;
+  	font-family: 'Righteous', cursive;
+}
+
+
+// .fly-in-text.gone li:nth-child(1) {	@include transform(translateX(-200px) translateY(-200px)) }
+// .fly-in-text.gone li:nth-child(2) {	@include transform(translateX(20px) translateY(100px)) }
+// .fly-in-text.gone li:nth-child(3) {	@include transform(translateX(-150px) translateY(-80px)) }
+// .fly-in-text.gone li:nth-child(4) {	@include transform(translateX(10px) translateY(-200px)) }
+// .fly-in-text.gone li:nth-child(5) {	@include transform(translateX(-300px) translateY(200px)) }
+// .fly-in-text.gone li:nth-child(6) {	@include transform(translateX(200px) translateY(-150px)) }
+
+/***********************************************
+        ABOUT STYLING
+***********************************************/ 
+
+.fill {
+	margin-bottom: 50px;
+	background: linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)),url('images/computer3.jpg') no-repeat center center fixed;
+	background-size: cover;
+	// border: 2px solid $mainblue;
+	overflow: hidden;
+	color: $mainblue;
+	font-size: 1.5em;
+}
+
+/***********************************************
+        PORTFOLIO STYLING
+***********************************************/ 
+
+#portfolio h2 {
+	font-family: 'Sigmar One', sans-sarif;
+	color: $mainblue;
+}
+
+.box{
+    position: relative;
+    perspective: 500px;
+    padding-top: 20px;
+}
+
+.box img{
+    width: 100%;
+    height: auto;
+    opacity:1;
+    transform: translateY(0) rotateX(0);
+    transition: all 0.6s ease-in-out 0s;
+}
+
+.box:hover img{
+    transform: translateY(-100%) rotateX(90deg);
+    transform-origin: center bottom 0;
+    opacity:0;
+}
+
+.box .over-layer{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:94%;
+    opacity:0;
+    background:#333d4b;
+    text-align:center;
+    padding: 0 20px;
+    margin-top: 20px;
+    transition: all 0.60s ease-in-out 0s;
+}
+
+.box:hover .over-layer{
+    opacity:1;
+}
+
+.box .title,
+.box .description,
+.box .link{
+    position: relative;
+    top: 11%;
+    color: #d3d3d3;
+}
+
+.box .title{
+    text-transform: capitalize;
+}
+
+.box .title:after,
+.box .description:after{
+    content:"";
+    width: 50%;
+    display: block;
+    margin: 10px auto 0;
+    border-bottom: 1px solid #fff;
+}
+
+.box .link{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+.box .link li{
+    margin: 10px;
+    display: inline-block;
+}
+
+.box .link li a{
+    color: #fff;
+    font-size: 20px;
+}
+
+.box .link li a:hover{
+    color: #d3d3d3;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 990px){
+    .box{  margin-bottom:20px; }
+}
+
+/***********************************************
+        CONTACT STYLING
+***********************************************/ 
+
+#contact {
+	margin-top: 40px;
+}
+
+.header {
+    color: $mainblue;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.form-group .bigicon {
+    font-size: 35px;
+    color: $mainblue;
+}
+
+#contact .well {
+	background-color: $secondblue;
+	.form-horizontal {
+	background-color: $secondblue;
+	}
+}
+
+/***********************************************
+        FOOTER STYLING
+***********************************************/ 
+
+.navbar-inverse {
+	background-color: $mainblue;
+	border: $secondblue;
+}
+
+.navbar-fixed-bottom p {
+	color: $secondblue;
+	text-decoration: none;
+}
+
+.fa-facebook-square, {
+	color: #3B5998;
+	&:hover {
+		color: white;
+	}
+}
+
+.fa-twitter-square {
+	color: #00aced;
+	&:hover {
+		color: white;
+	}
+}
+
+.fa-linkedin-square {
+	color: #007bb6;
+	&:hover {
+		color: white;
+	}
+}
+
+.fa-github-square:hover {
+	color: white;
+}
+
+.fa-envelope-square {
+	color: $secondblue;
+	&:hover {
+		color: white;
+	}
+}
+
+/***********************************************
+        MEDIA QUERIES
+***********************************************/ 
+
+@media screen and (max-width: 767px) {
+	.navbar-default {
+	background-color: rgba(40, 83, 107, 1.0);
+	border-color: $secondblue;
+	background-image: none;
+	background-repeat: no-repeat;
+	transition: background-color 0.3s ease 0s;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    	color: $mainblue;
+    	&:hover {
+    		color: $light;
+    	}
+	}
+}
